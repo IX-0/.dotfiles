@@ -1,0 +1,11 @@
+1) Confs
+- ~/.config/alacritty/
+- /etc/ly/
+- ~/.config/qtile/
+- ~/.config/nvim/
+- ~/.zshrc
+- ~/.config/rofi/
+- ~/.config/picom/
+- nitrogen
+- ~/.config/fastfetch/
+- ~/.config/btop/

@@ -1,0 +1,38 @@
+
+2024/10/30 (10:09:34) | ===> btop++ v.1.4.0
+2024/10/30 (10:09:34) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+
+2024/10/31 (12:58:03) | ===> btop++ v.1.4.0
+2024/10/31 (12:58:03) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+
+2024/10/31 (12:58:55) | ===> btop++ v.1.4.0
+2024/10/31 (12:58:55) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+
+2024/10/31 (14:13:19) | ===> btop++ v.1.4.0
+2024/10/31 (14:13:19) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+
+2024/10/31 (21:46:13) | ===> btop++ v.1.4.0
+2024/10/31 (21:46:13) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2024/10/31 (21:53:14) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2024/10/31 (21:53:19) | ===> btop++ v.1.4.0
+2024/10/31 (21:53:19) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2024/10/31 (21:53:24) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2024/10/31 (21:53:26) | ===> btop++ v.1.4.0
+2024/10/31 (21:53:26) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2024/10/31 (21:53:29) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2024/10/31 (21:53:30) | ===> btop++ v.1.4.0
+2024/10/31 (21:53:30) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2024/10/31 (21:53:32) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2024/10/31 (21:53:34) | ===> btop++ v.1.4.0
+2024/10/31 (21:53:34) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2024/10/31 (21:54:11) | ERROR: Exception during Config::unlock() : unordered_map::at
+
+2024/10/31 (21:54:16) | ===> btop++ v.1.4.0
+2024/10/31 (21:54:16) | WARNING: NVML: Failed to get maximum GPU power draw, defaulting to 225W: Not Supported
+2024/10/31 (21:56:44) | INFO: Logger set to INFO
+2024/10/31 (21:56:44) | INFO: Logger set to DEBUG
+2024/10/31 (21:56:45) | INFO: Logger set to INFO
