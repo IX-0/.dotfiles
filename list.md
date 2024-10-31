@@ -6,6 +6,7 @@
 - ~/.zshrc
 - ~/.config/rofi/
 - ~/.config/picom/
-- nitrogen
+- ~/.config/nitrogen/
 - ~/.config/fastfetch/
 - ~/.config/btop/
+- 
