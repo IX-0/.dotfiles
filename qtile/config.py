@@ -262,15 +262,22 @@ screens = [
                     background='#343F44',
                 ),
                 
-                widget.Pomodoro(
-                   color_active = "#a7c080",
-                   color_break = "#dbbc7f",
-                   color_inactive = "#86918a",
-                   background = "#343f44",
-                   font = "JetBrainsMono Nerd Font Bold",
-                   fontsize = 13,
-                   foreground = "#86918a",
-                   padding = 3,
+                widget.TextBox(
+                    text="📶",
+                    font="Font Awesome 6 Free Solid",
+                    fontsize=13,
+                    background='#343F44',
+                    foreground='#86918A',
+                ),
+
+                widget.Wlan(
+                    format="{essid} {percent:2.0%}",
+                    background = "#343f44",
+                    font = "JetBrainsMono Nerd Font Bold",
+                    fontsize = 13,
+                    foreground = "#86918a",
+                    padding = 3,
+                    update_interval = 3
                 ),
 
                 widget.Image(
