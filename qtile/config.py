@@ -383,10 +383,9 @@ screens = [
 
             ],
             30,
-            border_color='#232A2E',
+            border_color='#86918A',
             border_width=[0,0,0,0],
-            margin=[15,15,6,15],
-
+            margin=[15,9,6,9],
         ),
     ),
 ]
