@@ -39,10 +39,6 @@ o.undofile = true
 -- interval for writing swap file to disk, also used by gitsigns
 o.updatetime = 250
 
--- go to previous/next line with h,l,left arrow and right arrow
--- when cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
-
 -- disable some default providers
 g.loaded_node_provider = 0
 g.loaded_python3_provider = 0

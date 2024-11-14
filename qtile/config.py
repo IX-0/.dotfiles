@@ -329,6 +329,7 @@ screens = [
                     background='#343F44',
                     foreground='#86918A',
                     format='{percent:2.0%}',
+                    low_foreground='#DBBC7F"',
                 ),
 
                 widget.Image(
