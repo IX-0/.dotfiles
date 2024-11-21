@@ -9,4 +9,5 @@
 - ~/.config/nitrogen/
 - ~/.config/fastfetch/
 - ~/.config/btop/
-- 
+- ~/.p10k.zsh
+- ~/.oh-my-zsh/
