@@ -1,6 +1,6 @@
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:.
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:./bin:.
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -89,6 +89,10 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
+#----------------------------
+#ENV VARIABLES
+#----------------------------
+export EDITOR="nvim"
 
 #----------------------------
 #ALIASES
@@ -97,7 +101,7 @@ alias ll="ls -al"
 alias la="ls -a"
 alias cls="clear && ff"
 alias kys="systemctl poweroff"
-alias lendariocla="ssh xs@lendariocla.duckdns.org -p 20000"
+alias lendariocla="ssh xs@lendariocla.duckdns.org"
 alias llendariocla="ssh xs@192.168.1.51"
 alias nm="nmtui"
 alias blth="bluetui"
@@ -105,6 +109,8 @@ alias rnvim="sudo -Es nvim"
 alias rnv="rnvim"
 alias nv="nvim"
 alias ff="fastfetch"  
+alias rq="kys"
+
 #----------------------------
 #ON STARTUP
 #----------------------------
