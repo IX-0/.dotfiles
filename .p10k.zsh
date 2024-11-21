@@ -26,7 +26,6 @@ emulate -L zsh -o extended_glob
 
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  context                 # user@host
   dir                       # current directory
   vcs                       # git status
   prompt_char               # prompt symbol
@@ -105,11 +104,11 @@ emulate -L zsh -o extended_glob
   # Don't show the branch icon.
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
   # When in detached HEAD state, show @commit where branch normally goes.
-  typeset -g POWERLEVEL9K_VCS_COMMIT_ICON='@'
+  typeset -g POWERLEVEL9K_VCS_COMMIT_ICON=':@'
   # Don't show staged, unstaged, untracked indicators.
   typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED}_ICON=
   # Show '*' when there are staged, unstaged or untracked files.
-  typeset -g POWERLEVEL9K_VCS_DIRTY_ICON='*'
+  typeset -g POWERLEVEL9K_VCS_DIRTY_ICON=':❌'
   # Show '⇣' if local branch is behind remote.
   typeset -g POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=':⇣'
   # Show '⇡' if local branch is ahead of remote.
