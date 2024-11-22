@@ -14,6 +14,16 @@ emulate -L zsh -o extended_glob
   # Zsh >= 5.1 is required.
   [[ $ZSH_VERSION == (5.<1->*|<6->.*) ]] || return
 
+  #----------------------------------------
+  #            Colors and icons
+  #----------------------------------------
+  
+  # Battery stages
+  local battery_stages='▁▂▃▄▅▆▇'
+  local battery_icon='🔋'
+  local time_icon=''
+  local cpu_icon='⚙️'
+
   # Prompt colors.
   local grey='242'
   local red='1'
@@ -24,19 +34,38 @@ emulate -L zsh -o extended_glob
   local white='7'
   local green='2'
 
+  #----------------------------------------
+  #            Prompt segments
+  #----------------------------------------
+  
+  #Possible segments:
+  #dir                          - current working directory
+  #vcs                          - version control software
+  #newline
+  #prompt_char
+  #command_execution_time       - time to execute last command
+  #virtualenv                   - Python environment
+  #battery                      - battery status
+  #load                         - Cpu load
+  
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   dir                       # current directory
   vcs                       # git status
+  newline                   # \n
   prompt_char               # prompt symbol
 )
 
   # Right prompt segments.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   command_execution_time    # previous command duration
-  virtualenv                # python virtual environment
-  context                   # user@host
+  load                      # Cpu load
+  battery                   # battery status
 )
+  
+  #----------------------------------------
+  #            Prompt Style
+  #----------------------------------------
 
   # Basic style options that define the overall prompt look.
   typeset -g POWERLEVEL9K_BACKGROUND=                            # transparent background
@@ -45,10 +74,10 @@ emulate -L zsh -o extended_glob
   typeset -g POWERLEVEL9K_{LEFT,RIGHT}_SEGMENT_SEPARATOR=        # no end-of-line symbol
   typeset -g POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION=           # no segment icons
 
-  # Add an empty line before each prompt except the first. This doesn't emulate the bug
-  typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+  # Add an empty line before each prompt except the first.
+  typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-  # Magenta prompt symbol if the last command succeeded.
+  # Green prompt symbol if the last command succeeded.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=$green
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=$red
@@ -67,27 +96,61 @@ emulate -L zsh -o extended_glob
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
 
-  # Blue current directory.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
+  # Green current directory.
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$green
 
+  #----------------------------------------
+  #                 Context
+  #----------------------------------------
+  
   # Context format when root: user@host. The first part white, the rest grey.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}%n%f%F{$grey}@%m%f"
   # Context format when not root: user@host. The whole thing grey.
   typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$grey}%n@%m%f"
-  # Don't show context unless root or in SSH.
-  typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION=
+  
+  #----------------------------------------
+  #            Battery options 
+  #----------------------------------------
 
-  # Show previous command duration only if it's >= 5s.
+  # Options
+  typeset -g POWERLEVEL9K_BATTERY_LOW_THRESHOLD=25
+  typeset -g POWERLEVEL9K_BATTERY_LOW_FOREGROUND=$yellow
+  typeset -g POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND=$green
+  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=$blue
+  
+  typeset -g POWERLEVEL9K_BATTERY_STAGES=$battery_stages  
+  typeset -g POWERLEVEL9K_BATTERY_VISUAL_IDENTIFIER_EXPANSION=$battery_icon
+  # Don't show battery when it's fully charged and connected to power supply.
+  typeset -g POWERLEVEL9K_BATTERY_CHARGED_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
+  
+  # Don't show the remaining time to charge/discharge.
+  typeset -g POWERLEVEL9K_BATTERY_VERBOSE=false
+  
+
+  #----------------------------------------
+  #         Command execution time
+  #----------------------------------------
+  
+  # Execution time color.
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$green
+  # Show duration of the last command if takes at least this many seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
-  # Don't show fractional seconds. Thus, 7s rather than 7.3s.
+  # Show this many fractional digits. Zero means round to seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=2
   # Duration format: 1d 2h 3m 4s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
-  # Yellow previous command duration.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$blue
+  # Custom icon.
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_VISUAL_IDENTIFIER_EXPANSION=$time_icon
+  # Custom prefix.
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PREFIX='took '
+  
+
+  #----------------------------------------
+  #       Version control software
+  #----------------------------------------
 
   # Grey Git prompt. This makes stale prompts indistinguishable from up-to-date ones.
-  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$grey
+  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$white
 
   # Disable async loading indicator to make directories that aren't Git repositories
   # indistinguishable from large Git repositories without known state.
@@ -118,10 +181,34 @@ emulate -L zsh -o extended_glob
   # Remove space between '⇣' and '⇡' and all trailing spaces.
   typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='${${${P9K_CONTENT/⇣* :⇡/⇣⇡}// }//:/ }'
 
+  #----------------------------------------
+  #             Current time
+  #----------------------------------------
+  
   # Grey current time.
   typeset -g POWERLEVEL9K_TIME_FOREGROUND=$grey
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%I:%M:%S %p}'
+
+  #----------------------------------------
+  #               CPU load
+  #----------------------------------------
+
+  # Show average CPU load over this many last minutes. Valid values are 1, 5 and 15.
+  typeset -g POWERLEVEL9K_LOAD_WHICH=5
+  # load under 50%.
+  typeset -g POWERLEVEL9K_LOAD_NORMAL_FOREGROUND=$gray
+  # load between 50% and 70%.
+  typeset -g POWERLEVEL9K_LOAD_WARNING_FOREGROUND=$yellow
+  # load over 70%.
+  typeset -g POWERLEVEL9K_LOAD_CRITICAL_FOREGROUND=$red
+  # Custom icon.
+  typeset -g POWERLEVEL9K_LOAD_VISUAL_IDENTIFIER_EXPANSION=$cpu_icon
+  
+  #----------------------------------------
+  #             Prompt options 
+  #----------------------------------------
+
   # If set to true, time will update when you hit enter. This way prompts for the past
   # commands will contain the start times of their commands rather than the end times of
   # their preceding commands.
