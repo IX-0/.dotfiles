@@ -5,7 +5,7 @@ nvlsp.defaults()
 local lspconfig = require("lspconfig") 
 
 -- EXAMPLE
-local servers = { "html", "cssls", "clangd"}
+local servers = { "html", "cssls", "clangd", "pyright"}
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do

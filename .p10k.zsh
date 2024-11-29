@@ -120,8 +120,6 @@ emulate -L zsh -o extended_glob
   
   typeset -g POWERLEVEL9K_BATTERY_STAGES=$battery_stages  
   typeset -g POWERLEVEL9K_BATTERY_VISUAL_IDENTIFIER_EXPANSION=$battery_icon
-  # Don't show battery when it's fully charged and connected to power supply.
-  typeset -g POWERLEVEL9K_BATTERY_CHARGED_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
   
   # Don't show the remaining time to charge/discharge.
   typeset -g POWERLEVEL9K_BATTERY_VERBOSE=false

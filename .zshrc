@@ -38,7 +38,7 @@ alias blth="bluetui"
 alias rnvim="sudo -Es nvim"
 alias rnv="rnvim"
 alias nv="nvim"
-alias ff="fastfetch"  
+alias ff="clear && fastfetch"  
 alias rq="kys"
 alias cat="bat"
 
@@ -47,4 +47,4 @@ alias cat="bat"
 #----------------------------
 eval "$(zoxide init zsh)" #Start zoxide
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # p10k config setup
-ff # I use arch btw
+#ff # I use arch btw
