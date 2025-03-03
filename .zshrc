@@ -15,7 +15,7 @@ zstyle ':omz:update' frequency 1
 #Command correction
 #ENABLE_CORRECTION="true"
 
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 #----------------------------
@@ -23,6 +23,10 @@ source $ZSH/oh-my-zsh.sh
 #----------------------------
 export EDITOR="nvim"
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:.
+
+#ANTLR-4
+export CLASSPATH=".:/usr/local/lib/antlr-4.13.2-complete.jar:/usr/local/lib/ST-4.3.4.jar"
+export ANTLR4_PATH="/usr/local/lib"
 
 #----------------------------
 #ALIASES
