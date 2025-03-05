@@ -8,3 +8,9 @@ picom --config ~/.config/picom/picom.conf &
 
 # Start network-applet
 nm-applet &
+
+# Start blueman-applet 
+blueman-applet &
+
+# Start redshift
+redshift -l 40.72974:-8.4815

@@ -63,7 +63,7 @@ keys = [
 
 
 
-groups = [Group(f"{i+1}", label="") for i in range(7)]
+groups = [Group(f"{i+1}", label="") for i in range(5)]
 
 for i in groups:
     keys.extend(
