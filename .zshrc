@@ -7,6 +7,9 @@
 # Path to omz installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Path to omz custom plugins
+export ZSH_CUSTOM="~/.dotfiles/omz_custom"
+
 #ZSH theme
 ZSH_THEME="powerlevel10k/powerlevel10k" 
 

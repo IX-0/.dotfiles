@@ -9,3 +9,7 @@
 #uninstall bash
 
 #predifine zsh as default shell
+
+#install oh-my-zsh
+
+#reboot
