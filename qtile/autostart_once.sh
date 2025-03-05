@@ -13,4 +13,4 @@ nm-applet &
 blueman-applet &
 
 # Start redshift
-redshift -l 40.72974:-8.4815
+redshift -l 40.72974:-8.4815 &
