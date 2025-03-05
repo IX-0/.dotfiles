@@ -263,14 +263,14 @@ screens = [
                 ),
                 
                 widget.TextBox(
-                    text="📶",
+                    text="",
                     font="Font Awesome 6 Free Solid",
                     fontsize=13,
                     background='#343F44',
                     foreground='#86918A',
                 ),
 
-                widget.Wlan(
+                widget.Wlan( # Needs python-iwlib
                     format="{essid} {percent:2.0%}",
                     background = "#343f44",
                     font = "JetBrainsMono Nerd Font Bold",
@@ -349,7 +349,7 @@ screens = [
                     foreground='#86918A',
                 ),
 
-                widget.PulseVolume(
+                widget.PulseVolume( # Needs pulsectl_asyncio 
                     font="JetBrainsMono Nerd Font Bold",
                     fontsize=13,
                     background='#343F44',

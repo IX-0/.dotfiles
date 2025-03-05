@@ -1,9 +1,9 @@
 
 [window]
+dimensions = {columns = 120, lines = 50}
 
 [general]
 import = [
 "~/.config/alacritty/fonts.toml",
 "~/.config/alacritty/colors.toml"
 ]
-#padding = {x = 5, y = 5}

@@ -24,11 +24,11 @@ rofi_cmd() {
 #------------------------------------
 
 #Options
-shutdown=''
-reboot=''
-lock=''
-suspend=''
-logout=''
+shutdown=''
+reboot=''
+lock=''
+suspend=''
+logout=''
 
 run_rofi() {
     echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd

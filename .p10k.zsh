@@ -52,6 +52,7 @@ emulate -L zsh -o extended_glob
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   dir                       # current directory
   vcs                       # git status
+  virtualenv                # venv
   newline                   # \n
   prompt_char               # prompt symbol
 )
@@ -90,14 +91,22 @@ emulate -L zsh -o extended_glob
   # Prompt symbol in overwrite vi mode is the same as in command mode.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OVERWRITE_STATE=false
 
+  # Green current directory.
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$green
+
+  #----------------------------------------
+  #              PYTHON VENV
+  #----------------------------------------
+
   # Grey Python Virtual Environment.
   typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=$grey
   # Don't show Python version.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
-  typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
+  typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=''
 
-  # Green current directory.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$green
+  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=false
+  typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_EXPANSION='venv'
+  typeset -g POWERLEVEL9K_VIRTUALENV_CONTENT_EXPANSION=''
 
   #----------------------------------------
   #                 Context

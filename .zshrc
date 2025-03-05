@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 #----------------------------
 #OMZ and ZSH conf
 #----------------------------
@@ -24,7 +26,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:.
 
-#ANTLR-4
+#ANTLR4
 export CLASSPATH=".:/usr/local/lib/antlr-4.13.2-complete.jar:/usr/local/lib/ST-4.3.4.jar"
 export ANTLR4_PATH="/usr/local/lib"
 
@@ -38,13 +40,36 @@ alias kys="systemctl poweroff"
 alias lendariocla="ssh xs@lendariocla.duckdns.org"
 alias llendariocla="ssh xs@192.168.1.51"
 alias nm="nmtui"
-alias blth="bluetui"
-alias rnvim="sudo -Es nvim"
-alias rnv="rnvim"
 alias nv="nvim"
-alias ff="clear && fastfetch"  
 alias rq="kys"
 alias cat="bat"
+
+#ANTLR4
+ANTLR4="antlr4"
+alias a4-b="antlr4-build"
+alias a4-c="antlr4-clean"
+alias a4-r="antlr4-run"
+
+
+#----------------------------
+#FUNCTIONS
+#----------------------------
+
+pyenv() {
+    source bin/activate &> /dev/null || echo "No venv found..."
+}
+
+ff ()
+{
+    clear
+    fastfetch
+}
+
+zvim ()
+{
+    z $1
+    nvim
+}
 
 #----------------------------
 #ON STARTUP
