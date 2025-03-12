@@ -113,7 +113,7 @@ layouts = [
     # layout.Tile(shift_windows=True, **lay_config),
     # layout.Stack(num_stacks=2, **lay_config),
     # layout.Floating(**lay_config),
-    layout.Max(**lay_config),
+    # layout.Max(**lay_config),
 ]
 
 

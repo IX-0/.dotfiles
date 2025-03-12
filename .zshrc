@@ -75,7 +75,11 @@ ff ()
 
 zvim ()
 {
-    z $1
+    z $1 &> /dev/null
+    if [[ $? -ne 0 ]]; then
+        echo "No zoxide entries for '$1'"
+        return 1
+    fi
     nvim
 }
 
