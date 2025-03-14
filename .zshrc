@@ -70,7 +70,7 @@ pyenv() {
 ff ()
 {
     clear
-    fastfetch
+    fastfetch $*
 }
 
 zvim ()
@@ -81,6 +81,11 @@ zvim ()
         return 1
     fi
     nvim
+}
+
+yayclean ()
+{
+    yay -Qdtq | yay -Rns -
 }
 
 #----------------------------

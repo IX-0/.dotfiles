@@ -1,0 +1,12 @@
+alacritty/ ~/.config/ 
+btop/ ~/.config/
+fastfetch/ ~/.config/
+pacman.conf /etc/
+ly/ /etc/
+nvim/ ~/.config/
+picom/ ~/.config/
+qtile/ ~/.config/
+rofi/ ~/.config/
+.p10k.zsh ~/
+.zshrc ~/
+redshift.conf ~/.config/
