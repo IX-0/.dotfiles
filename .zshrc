@@ -45,8 +45,8 @@ alias ll="ls -al"
 alias la="ls -a"
 alias cls="clear"
 alias kys="systemctl poweroff"
-alias lendariocla="ssh xs@lendariocla.duckdns.org"
-alias llendariocla="ssh xs@192.168.1.51"
+alias lendariocla="ssh daisy@lendariocla.duckdns.org"
+alias llendariocla="ssh daisy@192.168.1.51"
 alias nm="nmtui"
 alias nv="nvim"
 alias rq="kys"
@@ -64,7 +64,15 @@ alias a4-r="antlr4-run"
 #----------------------------
 
 pyenv() {
-    source bin/activate &> /dev/null || echo "No venv found..."
+    if [[ -f bin/activate ]] ; then
+        source bin/activate &> /dev/null
+    elif [[ -f .venv/bin/activate ]]; then
+        source .venv/bin/activate &> /dev/null
+    elif [[ -f .env/bin/activate ]]; then
+        source .venv/bin/activate &> /dev/null
+    else
+        echo "No venv found"
+    fi
 }
 
 ff ()

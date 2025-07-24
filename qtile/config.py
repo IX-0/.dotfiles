@@ -139,7 +139,7 @@ def power():
 
 
 screens = [
-
+    #Main screen
     Screen(
         top=bar.Bar(
             [
@@ -389,6 +389,9 @@ screens = [
             margin=[15,9,6,9],
         ),
     ),
+
+    #Secondary Screen
+    Screen()
 ]
 
 # O P T I O N S
