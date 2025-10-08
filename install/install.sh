@@ -59,7 +59,6 @@ fi
 
 echo "Sadly the best part is DONE!!!"
 
-
 echo "Linking all configs"
 
 sudo ./install/linking.awk ./install.sh/paths.txt 

@@ -32,7 +32,7 @@ source $ZSH/oh-my-zsh.sh
 #ENV VARIABLES
 #----------------------------
 export EDITOR="nvim"
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:.
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 #ANTLR4
 export CLASSPATH=".:/usr/local/lib/antlr-4.13.2-complete.jar:/usr/local/lib/ST-4.3.4.jar"
@@ -69,7 +69,7 @@ pyenv() {
     elif [[ -f .venv/bin/activate ]]; then
         source .venv/bin/activate &> /dev/null
     elif [[ -f .env/bin/activate ]]; then
-        source .venv/bin/activate &> /dev/null
+        source .env/bin/activate &> /dev/null
     else
         echo "No venv found"
     fi

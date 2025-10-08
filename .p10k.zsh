@@ -20,7 +20,7 @@ emulate -L zsh -o extended_glob
   
   # Battery stages
   local battery_stages='▁▂▃▄▅▆▇'
-  local battery_icon='🔋'
+  local battery_icon=''
   local time_icon=''
   local cpu_icon='⚙️'
 

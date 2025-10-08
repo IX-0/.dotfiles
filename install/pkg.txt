@@ -1,3 +1,4 @@
+7zip
 accountsservice
 alacritty
 alsa-firmware
@@ -22,7 +23,6 @@ brightnessctl
 btop
 btrfs-progs
 ca-certificates
-cantarell-fonts
 cryptsetup
 datagrip
 datagrip-jre
@@ -83,6 +83,7 @@ hdparm
 hwdetect
 hwinfo
 hydra
+hyprland
 inetutils
 intellij-idea-ultimate-edition
 inxi
@@ -90,6 +91,7 @@ iptables-nft
 iwd
 jdk-openjdk
 jfsutils
+jupyter-notebook
 kate
 kcalc
 kdeconnect
@@ -105,6 +107,7 @@ libappindicator-gtk3
 libdvdcss
 libgsf
 libopenraw
+libreoffice-fresh-en-gb
 libwnck3
 linux
 linux-firmware
@@ -119,6 +122,7 @@ ly
 maliit-keyboard
 man-db
 man-pages
+maven
 mdadm
 meld
 mesa-utils
@@ -139,9 +143,6 @@ nikto
 nilfs-utils
 nmap
 noto-fonts
-noto-fonts-cjk
-noto-fonts-emoji
-noto-fonts-extra
 npm
 nss-mdns
 ntfs-3g
@@ -167,11 +168,12 @@ power-profiles-daemon
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
-pulsemixer
 pv
 python
 python-capng
+python-dbus-fast
 python-defusedxml
+python-ipykernel
 python-iwlib
 python-packaging
 python-poetry
@@ -194,11 +196,14 @@ s-nail
 sassc
 sbt
 sg3_utils
+sl
 smartmontools
 snx-rs
 sof-firmware
 spotify
 sudo
+sumo
+sumo-doc
 sysfsutils
 systemd-sysvcompat
 texinfo
@@ -208,8 +213,7 @@ thunar-volman
 thunderbird
 ttf-bitstream-vera
 ttf-dejavu
-ttf-font-awesome
-ttf-font-awesome-4
+ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-noto-nerd
@@ -221,10 +225,12 @@ upower
 usb_modeswitch
 usbutils
 vi
+virtualbox
 visual-studio-code-bin
 wget
 which
 wireplumber
+woff2-font-awesome
 wpa_supplicant
 xclip
 xdg-user-dirs
@@ -240,7 +246,6 @@ xorg-xhost
 xorg-xinit
 xorg-xinput
 xorg-xkill
-xorg-xlsfonts
 xorg-xrandr
 xsettingsd
 xterm

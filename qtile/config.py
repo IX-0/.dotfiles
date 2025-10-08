@@ -56,6 +56,8 @@ keys = [
     Key([], "XF86AudioNext", lazy.spawn("playerctl next"), desc='playerctl'),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 10%+"), desc='brightness UP'),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 10%-"), desc='brightness Down'),
+    Key([], "XF86PowerOff", lazy.spawn("sh -c ~/.config/rofi/scripts/power"), desc='powermenu via power button'),
+    Key([mod, "shift"], "XF86PowerOff", lazy.spawn("systemctl poweroff"))
 ]
 
 # █▀▀ █▀█ █▀█ █░█ █▀█ █▀
@@ -91,7 +93,7 @@ lay_config = {
     "margin": 9,
     "border_focus": "#A7C080",
     "border_normal": "#86918A",
-    "font": "FiraCode Nerd Font",
+    "font": "JetBrainsMono Nerd Font",
     "grow_amount": 10,
 }
 
@@ -127,10 +129,10 @@ extension_defaults = [ widget_defaults.copy() ]
 
 
 def search():
-    qtile.cmd_spawn("sh -c ~/.config/rofi/scripts/launcher")
+    qtile.spawn("sh -c ~/.config/rofi/scripts/launcher")
 
 def power():
-    qtile.cmd_spawn("sh -c ~/.config/rofi/scripts/power")
+    qtile.spawn("sh -c ~/.config/rofi/scripts/power")
 
 
 # █▄▄ ▄▀█ █▀█
@@ -201,11 +203,11 @@ screens = [
                     filename='~/.config/qtile/Assets/1.png',
                 ),
 
-
-                widget.CurrentLayoutIcon(
-                    custom_icon_paths=["~/.config/qtile/Assets/layout"],
+                widget.CurrentLayout(
+                    custom_icon_paths=["~/.dotfiles/qtile/Assets/layout"],
                     background='#343F44',
-                    scale=0.50,
+                    mode="icon",
+                    scale=0.5,
                 ),
 
                 widget.Image(
@@ -213,8 +215,8 @@ screens = [
                 ),
 
                 widget.TextBox(
-                    text=" ",
-                    font="Font Awesome 6 Free Solid",
+                    text="",
+                    font="Font Awesome 7 Free Solid",
                     fontsize=13,
                     background='#232A2E',
                     foreground='#86918A',
@@ -264,7 +266,7 @@ screens = [
                 
                 widget.TextBox(
                     text="",
-                    font="Font Awesome 6 Free Solid",
+                    font="Font Awesome 7 Free Solid",
                     fontsize=13,
                     background='#343F44',
                     foreground='#86918A',
@@ -290,8 +292,8 @@ screens = [
                 ),
 
                 widget.TextBox(
-                    text="",
-                    font="Font Awesome 6 Free Solid",
+                    text="",
+                    font="Font Awesome 7 Free Solid",
                     fontsize=13,
                     background='#343F44',
                     foreground='#86918A',
@@ -317,7 +319,7 @@ screens = [
 
                 widget.TextBox(
                     text=" ",
-                    font="Font Awesome 6 Free Solid",
+                    font="Font Awesome 7 Free Solid",
                     fontsize=13,
                     background='#343F44',
                     foreground='#86918A',
@@ -343,17 +345,20 @@ screens = [
 
                 widget.TextBox(
                     text=" ",
-                    font="Font Awesome 6 Free Solid",
+                    font="Font Awesome 7 Free Solid",
                     fontsize=13,
                     background='#343F44',
                     foreground='#86918A',
                 ),
 
-                widget.PulseVolume( # Needs pulsectl_asyncio 
+                widget.PulseVolume(  # Needs pulsectl_asyncio
                     font="JetBrainsMono Nerd Font Bold",
                     fontsize=13,
-                    background='#343F44',
-                    foreground='#86918A',
+                    background="#343F44",
+                    foreground="#86918A",
+                    mouse_callbacks={
+                        "Button1": lambda: qtile.cmd_spawn("pavucontrol")
+                    },
                 ),
 
                 widget.Image(
@@ -363,7 +368,7 @@ screens = [
 
                 widget.TextBox(
                     text=" ",
-                    font="Font Awesome 6 Free Solid",
+                    font="Font Awesome 7 Free Solid",
                     fontsize=13,
                     background='#232A2E',
                     foreground='#86918A',
