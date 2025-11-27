@@ -5,7 +5,7 @@ alsa-firmware
 alsa-plugins
 alsa-utils
 amd-ucode
-arandr
+antigravity-bin
 ark
 autorandr
 b43-fwcutter
@@ -22,7 +22,9 @@ bluez-utils
 brightnessctl
 btop
 btrfs-progs
+burpsuite
 ca-certificates
+cloc
 cryptsetup
 datagrip
 datagrip-jre
@@ -65,6 +67,7 @@ flameshot
 fluffy-git
 freesweep
 fwupd
+gimp
 git
 glances
 gnome-keyring
@@ -91,6 +94,7 @@ iptables-nft
 iwd
 jdk-openjdk
 jfsutils
+jq
 jupyter-notebook
 kate
 kcalc
@@ -103,7 +107,7 @@ kio-fuse
 kitty
 kwayland-integration
 less
-libappindicator-gtk3
+libappindicator
 libdvdcss
 libgsf
 libopenraw
@@ -150,6 +154,7 @@ ntp
 nvidia
 nvidia-hook
 nvidia-inst
+obs-studio
 obsidian
 oh-my-zsh-git
 openssh
@@ -157,19 +162,23 @@ os-prober
 pacman-contrib
 pavucontrol
 perl
+perl-image-exiftool
 picom
 pipewire-alsa
 pipewire-jack
 pkgfile
 playerctl
 plocate
+pnpm
 poppler-glib
 power-profiles-daemon
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
+pulsemixer
 pv
 python
+python-black
 python-capng
 python-dbus-fast
 python-defusedxml
@@ -200,7 +209,10 @@ sl
 smartmontools
 snx-rs
 sof-firmware
+spicetify-cli
+spicetify-marketplace-bin
 spotify
+steghide
 sudo
 sumo
 sumo-doc
@@ -211,6 +223,7 @@ thunar
 thunar-archive-plugin
 thunar-volman
 thunderbird
+traceroute
 ttf-bitstream-vera
 ttf-dejavu
 ttf-jetbrains-mono
@@ -218,12 +231,14 @@ ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-noto-nerd
 ttf-opensans
+tuned
 unixodbc
 unrar
 unzip
 upower
 usb_modeswitch
 usbutils
+uv
 vi
 virtualbox
 visual-studio-code-bin
@@ -242,6 +257,7 @@ xfsprogs
 xl2tpd
 xorg-server
 xorg-xdpyinfo
+xorg-xev
 xorg-xhost
 xorg-xinit
 xorg-xinput

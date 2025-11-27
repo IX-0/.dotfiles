@@ -75,6 +75,12 @@ pyenv() {
     fi
 }
 
+pyenv-setup() {
+    python -m venv .venv
+    pyenv
+    pip install -r requirements.txt
+}
+
 ff ()
 {
     clear

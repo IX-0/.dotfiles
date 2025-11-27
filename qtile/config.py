@@ -1,9 +1,7 @@
 from libqtile import bar, layout, widget, hook, qtile
-from libqtile.config import Click, Drag, Group, Key, Match, hook, Screen, KeyChord
+from libqtile.config import Group, Key, hook, Screen
+from libqtile.widget import base
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
-from libqtile.dgroups import simple_key_binder
-from time import sleep
 
 # C O N S T A N T S
 mod = "mod4"
@@ -134,11 +132,27 @@ def search():
 def power():
     qtile.spawn("sh -c ~/.config/rofi/scripts/power")
 
+POWER_PROFILES = {
+    "balanced-battery": "󰖨 ",
+    "powersave": " ",
+    "throughput-performance": "⚡",
+}
+
+class IconTunedManager(widget.TunedManager):
+
+    def custom_text(self):
+        return POWER_PROFILES.get(self.current_mode, self.current_mode)
+
+    def poll(self):
+        return self.custom_text()
+
+    def update_bar(self):
+        self.current_mode = self.find_mode()
+        self.text = self.custom_text()
+        self.bar.draw()
 
 # █▄▄ ▄▀█ █▀█
 # █▄█ █▀█ █▀▄
-
-
 
 screens = [
     #Main screen
@@ -307,7 +321,7 @@ screens = [
                     fontsize=13,
                     update_interval=5,
                 ),
-
+                
                 widget.Image(
                     filename='~/.config/qtile/Assets/2.png',
                 ),
@@ -317,12 +331,13 @@ screens = [
                     background='#343F44',
                 ),
 
-                widget.TextBox(
-                    text=" ",
-                    font="Font Awesome 7 Free Solid",
-                    fontsize=13,
+                IconTunedManager(
                     background='#343F44',
                     foreground='#86918A',
+                    font="JetBrainsMono Nerd Font Bold",
+                    modes=list(map(lambda k: str(k), POWER_PROFILES.keys())),
+                    update_interval=500,
+                    fontsize=15,
                 ),
 
                 widget.Battery(
@@ -341,7 +356,7 @@ screens = [
                 widget.Spacer(
                     length=8,
                     background='#343F44',
-                ),
+                ), 
 
                 widget.TextBox(
                     text=" ",
@@ -349,6 +364,10 @@ screens = [
                     fontsize=13,
                     background='#343F44',
                     foreground='#86918A',
+                    mouse_callbacks={
+                        "Button1": lambda: qtile.cmd_spawn("pavucontrol")
+                    },
+
                 ),
 
                 widget.PulseVolume(  # Needs pulsectl_asyncio
@@ -366,16 +385,8 @@ screens = [
                     background='#343F44',
                 ),
 
-                widget.TextBox(
-                    text=" ",
-                    font="Font Awesome 7 Free Solid",
-                    fontsize=13,
-                    background='#232A2E',
-                    foreground='#86918A',
-                ),
-
                 widget.Clock(
-                    format='%I:%M %p',
+                    format='󰃭 %d-%m %Y  %I:%M %p',
                     background='#232A2E',
                     foreground='#86918A',
                     font="JetBrainsMono Nerd Font Bold",
