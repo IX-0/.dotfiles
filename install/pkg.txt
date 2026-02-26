@@ -118,7 +118,6 @@ libgsf
 libopenraw
 libreoffice-fresh-en-gb
 libwnck3
-lightdm
 linux
 linux-firmware
 linux-headers

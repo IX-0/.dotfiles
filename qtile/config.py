@@ -143,7 +143,19 @@ class IconTunedManager(widget.TunedManager):
     def custom_text(self):
         return POWER_PROFILES.get(self.current_mode, self.current_mode)
 
+    def find_mode(self):
+        import re, subprocess
+        result = subprocess.run("tuned-adm active", shell=True, capture_output=True, text=True)
+        combined = result.stdout + result.stderr
+        match = re.search(r"(?:Current active|[Pp]reset) profile:\s+(\S+)", combined)
+        return match.group(1) if match else ""
+
+    def _configure(self, qtile, bar):
+        widget.TunedManager._configure(self, qtile, bar)
+        self.text = self.custom_text()
+
     def poll(self):
+        self.current_mode = self.find_mode()
         return self.custom_text()
 
     def update_bar(self):
@@ -346,7 +358,7 @@ screens = [
                     background='#343F44',
                     foreground='#86918A',
                     format='{percent:2.0%}',
-                    low_foreground='#DBBC7F"',
+                    low_foreground='#DBBC7F',
                 ),
 
                 widget.Image(
