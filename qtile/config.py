@@ -38,6 +38,7 @@ keys = [
     # ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "m", lazy.spawn("lxrandr")),
     Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
@@ -359,6 +360,7 @@ screens = [
                     foreground='#86918A',
                     format='{percent:2.0%}',
                     low_foreground='#DBBC7F',
+                    charging_foreground='#A7C080',
                 ),
 
                 widget.Image(

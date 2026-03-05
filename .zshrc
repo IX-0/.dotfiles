@@ -9,6 +9,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Reuse terraform plugins between projects
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+
 # Path to omz installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -16,7 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.dotfiles/omz_custom"
 
 #ZSH theme
-ZSH_THEME="powerlevel10k/powerlevel10k" 
+export ZSH_THEME="powerlevel10k/powerlevel10k" 
 
 #Update rules
 zstyle ':omz:update' mode auto
