@@ -111,3 +111,5 @@ yayclean ()
 eval "$(zoxide init zsh)" #Start zoxide
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # p10k config setup
 #ff # I use arch btw
+export JAVA_HOME=/usr/lib/jvm/java-25-openjdk
+export PATH=$JAVA_HOME/bin:$PATH

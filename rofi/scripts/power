@@ -4,7 +4,7 @@
 # Config and theme
 #------------------------------------
 
-file="$HOME/.config/rofi/settings/powermenu.rasi"
+file="$HOME/.config/rofi/themes/powermenu.rasi"
 
 username=" $(whoami)"
 

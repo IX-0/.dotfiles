@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+#------------------------------------
+# Config and theme
+#------------------------------------
+
+file="$HOME/.config/rofi/themes/tunedmenu.rasi"
+
+username=" $(whoami)"
+
+#------------------------------------
+# Run rofi
+#------------------------------------
+
+rofi_cmd() {
+    rofi -dmenu \
+        -p "$username" \
+        -mesg "Power Profile" \
+        -theme "${file}"
+}
+
+# Options
+powersave=""
+balanced="󰖨"
+performance="⚡"
+
+run_rofi() {
+    echo -e "$powersave\n$balanced\n$performance" | rofi_cmd
+}
+
+#------------------------------------
+# Run cmds
+#------------------------------------
+
+chosen="$(run_rofi)"
+case ${chosen} in
+    $powersave)
+        sudo tuned-adm profile powersave
+        notify-send "Power Profile" "Switched to Powersave" --urgency=low
+        ;;
+    $balanced)
+        sudo tuned-adm profile balanced-battery
+        notify-send "Power Profile" "Switched to Balanced Battery" --urgency=low
+        ;;
+    $performance)
+        sudo tuned-adm profile throughput-performance
+        notify-send "Power Profile" "Switched to Performance" --urgency=low
+        ;;
+esac
+
+# Force refresh of qtile widget
+qtile cmd-obj -o widget tuned -f update_widget

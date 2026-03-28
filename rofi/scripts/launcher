@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-file="$HOME/.config/rofi/settings/launcher.rasi"
+file="$HOME/.config/rofi/themes/launcher.rasi"
 
 ## Run
 rofi \
