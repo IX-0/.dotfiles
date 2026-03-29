@@ -32,19 +32,27 @@ run_rofi() {
 # Run cmds
 #------------------------------------
 
+switch_profile() {
+    local profile="$1"
+    local name="$2"
+    local err
+    if err=$(sudo tuned-adm profile "$profile" 2>&1); then
+        notify-send "Power Profile" "Switched to $name" --urgency=low
+    else
+        notify-send "Power Profile" "Failed to switch to $name\nError: $err" --urgency=critical
+    fi
+}
+
 chosen="$(run_rofi)"
 case ${chosen} in
     $powersave)
-        sudo tuned-adm profile powersave
-        notify-send "Power Profile" "Switched to Powersave" --urgency=low
+        switch_profile "powersave" "Powersave"
         ;;
     $balanced)
-        sudo tuned-adm profile balanced-battery
-        notify-send "Power Profile" "Switched to Balanced Battery" --urgency=low
+        switch_profile "balanced-battery" "Balanced Battery"
         ;;
     $performance)
-        sudo tuned-adm profile throughput-performance
-        notify-send "Power Profile" "Switched to Performance" --urgency=low
+        switch_profile "throughput-performance" "Performance"
         ;;
 esac
 

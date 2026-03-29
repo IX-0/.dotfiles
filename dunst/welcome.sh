@@ -66,5 +66,4 @@ fi
 
 notify-send "System Ready" "$message" \
     --urgency=$urgency \
-    --timeout=10000 \
     --app-name="Qtile"

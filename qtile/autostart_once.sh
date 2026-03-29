@@ -17,5 +17,7 @@ redshift -l 40.72974:-8.4815 &
 
 # Start dunst
 dunst &
-sleep 3 && bash ~/.dotfiles/dunst/welcome.sh &
+sleep 3
+
+bash ~/.dotfiles/dunst/welcome.sh &
 bash ~/.dotfiles/dunst/log_monitor.sh &

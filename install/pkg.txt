@@ -8,7 +8,6 @@ amd-ucode
 ansible
 ansible-lint
 antigravity
-ark
 autorandr
 b43-fwcutter
 base
@@ -57,7 +56,7 @@ f2fs-tools
 fastfetch
 feh
 ffmpegthumbnailer
-ffmpegthumbs
+file-roller
 firefox
 firewalld
 flameshot
@@ -91,13 +90,7 @@ jdk25-openjdk
 jfsutils
 jq
 jupyter-notebook
-kcalc
-kdeconnect
-kdegraphics-thumbnailers
-kdenetwork-filesharing
 kimageformats
-kio-admin
-kio-fuse
 kubectl
 less
 libappindicator
@@ -113,7 +106,6 @@ logrotate
 lsb-release
 lsscsi
 lvm2
-lxappearance
 lxrandr
 ly
 man-db
@@ -143,12 +135,15 @@ ntp
 nvidia-hook
 nvidia-inst
 nvidia-open
+nwg-look
 obs-studio
 obsidian
 oh-my-zsh-git
 openssh
+orchis-theme
 os-prober
 pacman-contrib
+papirus-icon-theme
 pavucontrol
 perl
 perl-image-exiftool
@@ -161,7 +156,6 @@ plocate
 pnpm
 poppler-glib
 postman-bin
-power-profiles-daemon
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
@@ -249,7 +243,6 @@ xorg-xinit
 xorg-xinput
 xorg-xkill
 xorg-xrandr
-xsettingsd
 yay
 zip
 zoxide

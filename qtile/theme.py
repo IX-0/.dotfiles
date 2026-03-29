@@ -9,6 +9,7 @@ class Theme:
     fg_grey2:       str = "#9DA9A0"  # lightest grey, dimmed text
 
     # --- Accent colors ---
+    white:          str = "#FFFFFF"  # just white
     red:            str = "#E67E80"  # errors, urgent, warnings
     orange:         str = "#E69875"  # special highlights
     yellow:         str = "#DBBC7F"  # warnings, low battery

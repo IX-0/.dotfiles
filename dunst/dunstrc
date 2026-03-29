@@ -4,7 +4,14 @@
     foreground = "#D3C6AA"
     frame_color = "#A7C080"
     separator_color = "#4F585E"
-    corner_radius = 0
+    separator_height = 2
+    corner_radius = 10
+    frame_width = 2
+    padding = 15
+    horizontal_padding = 15
+    text_icon_padding = 10
+    width = 320
+    height = (0, 110)
     gap_size = 5
     origin = top-right
     offset = (10, 60)
